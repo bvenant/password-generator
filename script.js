@@ -1,30 +1,28 @@
 // Assignment code here
-const length;
-const lowercase;
-const uppercase;
-const number;
-const character;
+var length;
+var lowercase;
+var uppercase;
+var number;
+var character;
   
 // Password Parameters
-const tall = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
-const short = ["abcdefghijklmnopqrstuvwxyz".split('')];
-const unit= ["0123456789".split('')];
-const symbol = ["!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('')];
+var tall = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
+var short = ["abcdefghijklmnopqrstuvwxyz".split('')];
+var unit= ["0123456789".split('')];
+var symbol = ["!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('')];
 
 //Generate Password
 function generatePassword() {
-    length = parseInt(prompt("Password needs to be between 8 and 128 characters"));
-    if (length) {
-      alert("You need to enter a value");
-    } else if (length < 8 || length > 128) {
-      length = parseInt(prompt("choose between 8 and 128"));
+
+    length = parseInt(prompt("Password will be between 8 and 128 characters. How many characters would you like?"));
+    while (length <= 7 || length >= 129) {
+      parseInt(prompt("You need to enter a value between 8 and 128"));
+    } if (length => 7 || length <= 129) { 
+      alert("Perfect! Click ok to confirm a character")
     } else {
-      lowercase = confirm("This will add lowercase letters?");
-      uppercase = confirm("This will add uppercase letters?");
-      number = confirm("This will add numbers?");
-      character = confirm("This will add characters?");
+      alert("click ok to next question");
     }
-}
+  };  
 
 
 // Get references to the #generate element
