@@ -1,34 +1,42 @@
 // Assignment code here
-const length = document.querySelector("length").checked;
-const lowercase = document.querySelector("lowercase").checked;
-const uppercase = document.querySelector("uppercase").checked;
-const number = document.querySelector("number").checked;
-const character = document.querySelector("character").checked;
+const length;
+const lowercase;
+const uppercase;
+const number;
+const character;
   
-//One box needs to be chaecked
-var group = length + lowercase + uppercase + number + character;
+// Password Parameters
+const tall = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
+const short = ["abcdefghijklmnopqrstuvwxyz".split('')];
+const unit= ["0123456789".split('')];
+const symbol = ["!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('')];
 
-if (group === 0) { generatedPassword = generatePassword + "Please check at least one!";
-    return generatePassword;
-  };
-
-  // Password Parameters
-    const tall = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-    const short = "abcdefghijklmnopqrstuvwxyz".split('');
-    const  unit= "0123456789".split('');
-    const symbol = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('');
-
-
+//Generate Password
+function generatePassword() {
+    length = parseInt(prompt("Password needs to be between 8 and 128 characters"));
+    if (length) {
+      alert("You need to enter a value");
+    } else if (length < 8 || length > 128) {
+      length = parseInt(prompt("choose between 8 and 128"));
+    } else {
+      lowercase = confirm("This will add lowercase letters?");
+      uppercase = confirm("This will add uppercase letters?");
+      number = confirm("This will add numbers?");
+      character = confirm("This will add characters?");
+    }
+}
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
 // Write password to the #password input
-function writePassword() {
+function writePassword( ) {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+   
   passwordText.value = password;
 
 }
