@@ -11,6 +11,7 @@ var tall = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
 var short = ["abcdefghijklmnopqrstuvwxyz".split('')];
 var unit= ["0123456789".split('')];
 var symbol = ["!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('')];
+possibleCharacters = [];
 
 // Generate Password
 function generatePassword() {
@@ -27,28 +28,28 @@ function generatePassword() {
     // Confirm whether or not to include lowercase, uppercase, numeric, and/or special
     lowercase = confirm("Would you like any lowercase letters?");
     if (lowercase) {
-      alert("Lowercase picked");
+      possibleCharacters = possibleCharacters.concat(short);
     } else { 
       alert("Option not chosen");
     } 
 
     uppercase = confirm("Would you like any uppercase letters?");
     if (uppercase) {
-      alert("Uppercase picked");
+      possibleCharacters = possibleCharacters.concat(tall);
     } else { 
       alert("Option not chosen");
     } 
 
     number = confirm("Would you like numbers?");
     if (number) {
-      alert("Numbers picked");
+      possibleCharacters = possibleCharacters.concat(unit);
     } else { 
       alert("Option not chosen");
     } 
 
     character = confirm("Would you like special characters?");
     if (character) {
-      alert("Special Characters picked");
+      possibleCharacters = possibleCharacters.concat(symbol);
     } else { 
       alert("Option not chosen");
     } 
