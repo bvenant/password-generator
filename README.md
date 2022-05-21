@@ -39,6 +39,6 @@ THEN the password is either displayed in an alert or written to the page
 ### Links  
  
 
-[Password Generator Website](https://bvenant.github.io/)  
+[Password Generator Website](https://bvenant.github.io/password-generator/)  
 
 [Password Generator repository](https://github.com/bvenant/password-generator) 
