@@ -30,6 +30,7 @@ THEN the password is either displayed in an alert or written to the page
 ### Usage  
 
 
+![ps-generator](https://user-images.githubusercontent.com/103866289/169664210-af7aa5f1-b9d2-438b-99a7-1a5bed3488a9.png)
 
  
 
