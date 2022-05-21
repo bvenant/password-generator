@@ -58,6 +58,15 @@ function generatePassword() {
     if(!lowercase && !uppercase && !number && !character) {
       alert("You must pick 1 of the 4 options. Please start over!");
     } 
+
+    var randomPick ="";
+
+    for (var i = 0; i < length; i++) {
+      randomPick = possibleCharacters[Math.floor(Math.random() * possibleCharacters)];
+      
+    }
+
+    return possibleCharacters;
 };
 
 // Get references to the #generate element
