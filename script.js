@@ -7,25 +7,21 @@ var character;
 var options;
   
 // Password Parameters
-var tall = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
-var short = ["abcdefghijklmnopqrstuvwxyz".split('')];
-var unit= ["0123456789".split('')];
-var symbol = ["!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('')];
+var tall = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+var short = "abcdefghijklmnopqrstuvwxyz".split('');
+var unit= "0123456789".split('');
+var symbol = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=".split('');
 possibleCharacters = [];
 
 // Generate Password
 function generatePassword() {
 
     length = parseInt(prompt("Password will be between 8 and 128 characters. How many characters would you like?"));
-    if (length <= 7 || length >= 129) {
-      parseInt(prompt("You need to enter a value between 8 and 128"));
-    } else if (length => 7 || length <= 129) { 
-      alert("Perfect! Click ok to confirm whether or not to include lowercase, uppercase, numeric, and/or special characters");
-    } else {
-      alert("click ok to next question");
+    while (!length || length < 8 || length > 128) {
+      alert("You need to enter a value between 8 and 128");
+      length = parseInt(prompt("Password will be between 8 and 128 characters. How many characters would you like?"));
     }
-
-    // Confirm whether or not to include lowercase, uppercase, numeric, and/or special
+    
     lowercase = confirm("Would you like any lowercase letters?");
     if (lowercase) {
       possibleCharacters = possibleCharacters.concat(short);
@@ -58,15 +54,16 @@ function generatePassword() {
     if(!lowercase && !uppercase && !number && !character) {
       alert("You must pick 1 of the 4 options. Please start over!");
     } 
-
-    var randomPick ="";
+    // Random Password
+    var generatedPassword ="";
 
     for (var i = 0; i < length; i++) {
-      randomPick = possibleCharacters[Math.floor(Math.random() * possibleCharacters)];
-      
+      // var randomPick = possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
+      // generatedPassword.push(randomPick);
+      generatedPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
     }
 
-    return possibleCharacters;
+    return generatedPassword;
 };
 
 // Get references to the #generate element
